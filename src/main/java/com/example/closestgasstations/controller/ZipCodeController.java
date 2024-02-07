@@ -2,7 +2,6 @@ package com.example.closestgasstations.controller;
 
 import com.example.closestgasstations.model.ZipCode;
 import com.example.closestgasstations.service.ZipCodeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/zip-codes")
 public class ZipCodeController {
 
-    @Autowired
-    private ZipCodeService zipCodeService;
+    private final ZipCodeService zipCodeService;
+
+    public ZipCodeController(ZipCodeService zipCodeService) {
+        this.zipCodeService = zipCodeService;
+    }
 
     @PostMapping
     public ResponseEntity<ZipCode> addZipCode(@RequestBody ZipCode zipCode) {

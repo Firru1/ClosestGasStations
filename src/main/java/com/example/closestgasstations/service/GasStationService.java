@@ -4,7 +4,6 @@ import com.example.closestgasstations.model.GasStation;
 import com.example.closestgasstations.model.ZipCode;
 import com.example.closestgasstations.repository.GasStationRepository;
 import com.example.closestgasstations.repository.ZipCodeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +13,14 @@ import java.util.stream.Collectors;
 @Service
 public class GasStationService {
 
-    @Autowired
-    private GasStationRepository gasStationRepository;
+    private final GasStationRepository gasStationRepository;
 
-    @Autowired
-    private ZipCodeRepository zipCodeRepository;
+    private final ZipCodeRepository zipCodeRepository;
+
+    public GasStationService(GasStationRepository gasStationRepository, ZipCodeRepository zipCodeRepository) {
+        this.gasStationRepository = gasStationRepository;
+        this.zipCodeRepository = zipCodeRepository;
+    }
 
     public List<GasStation> getAllGasStations() {
         return gasStationRepository.findAll();

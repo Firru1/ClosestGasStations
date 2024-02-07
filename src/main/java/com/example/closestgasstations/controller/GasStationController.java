@@ -2,7 +2,6 @@ package com.example.closestgasstations.controller;
 
 import com.example.closestgasstations.model.GasStation;
 import com.example.closestgasstations.service.GasStationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +11,11 @@ import java.util.List;
 @RequestMapping("/api/gas-stations")
 public class GasStationController {
 
-    @Autowired
-    private GasStationService gasStationService;
+    private final GasStationService gasStationService;
+
+    public GasStationController(GasStationService gasStationService) {
+        this.gasStationService = gasStationService;
+    }
 
     @GetMapping("/nearest")
     public ResponseEntity<List<GasStation>> getNearestGasStations(@RequestParam String zipCode) {

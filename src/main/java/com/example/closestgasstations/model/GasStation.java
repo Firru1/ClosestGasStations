@@ -16,10 +16,10 @@ public class GasStation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "address", nullable = false, length = 255)
+    @Column(name = "address", nullable = false)
     private String address;
 
     @Column(name = "latitude", precision = 9, scale = 6, nullable = false)
