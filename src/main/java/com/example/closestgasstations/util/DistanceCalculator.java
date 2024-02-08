@@ -1,4 +1,4 @@
-package com.example.closestgasstations.service;
+package com.example.closestgasstations.util;
 
 public class DistanceCalculator {
 

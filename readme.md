@@ -18,6 +18,7 @@ Once the application is running, access the Swagger UI at `http://localhost:8080
 ## Endpoints
 - GET `/api/gas-stations/nearest?zipCode=<ZIP_CODE>`: Find nearest gas stations.
 - POST `/api/gas-stations`: Add a new gas station.
+- POST `/api/zip-codes`: Add a new Zip Code
 - PUT `/api/gas-stations/{id}`: Update an existing gas station.
 - DELETE `/api/gas-stations/{id}`: Delete an existing gas station.
 - GET `/api/zip-codes`: Get all ZIP codes.
