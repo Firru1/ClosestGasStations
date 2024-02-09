@@ -1,6 +1,5 @@
 package com.example.closestgasstations.controller;
 
-import com.example.closestgasstations.model.GasStation;
 import com.example.closestgasstations.service.GasStationService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +44,7 @@ public class GasStationController {
 
     @DeleteMapping("/{zipCode}")
     public ResponseEntity<?> deleteGasStation(@PathVariable String zipCode) {
-        gasStationService.deleteGasStationByZipCode(zipCode);
+        gasStationService.deleteGasStationsByZipCode(zipCode);
         return ResponseEntity.ok().build();
     }
 }

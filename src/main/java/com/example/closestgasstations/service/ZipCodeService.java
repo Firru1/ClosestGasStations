@@ -17,6 +17,10 @@ public class ZipCodeService {
     }
 
     public ZipCodeDTO addZipCode(ZipCodeDTO zipCodeDTO) {
+        ZipCode existingZipCode = zipCodeRepository.findByZipCode(zipCodeDTO.getZipCode()).orElse(null);
+        if (existingZipCode != null) {
+            return modelMapper.map(existingZipCode, ZipCodeDTO.class);
+        }
         ZipCode zipCode = modelMapper.map(zipCodeDTO, ZipCode.class);
         ZipCode savedZipCode = zipCodeRepository.save(zipCode);
         return modelMapper.map(savedZipCode, ZipCodeDTO.class);
