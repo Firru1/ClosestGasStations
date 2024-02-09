@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Service
 public class GasStationService {
 
@@ -27,6 +28,7 @@ public class GasStationService {
         this.zipCodeRepository = zipCodeRepository;
         this.modelMapper = modelMapper;
     }
+
 
     public List<GasStationDTO> getAllGasStations() {
         return gasStationRepository.findAll().stream()

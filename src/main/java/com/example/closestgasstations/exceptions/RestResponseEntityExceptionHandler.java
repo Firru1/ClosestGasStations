@@ -13,5 +13,16 @@ public class RestResponseEntityExceptionHandler {
         String bodyOfResponse = "An error occurred: " + ex.getMessage();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(bodyOfResponse);
     }
-    // Need toAdd more exception handlers as needed
+
+    @ExceptionHandler(ZipCodeNotFoundException.class)
+    public ResponseEntity<Object> handleZipCodeNotFound(ZipCodeNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(GasStationNotFoundException.class)
+    public ResponseEntity<Object> handleGasStationNotFound(GasStationNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+
 }
