@@ -8,10 +8,10 @@ import com.example.closestgasstations.repository.ZipCodeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.modelmapper.ModelMapper;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
@@ -70,5 +70,6 @@ public class GasStationServiceTest {
     }
 
 
-    // Add more tests for other methods...
+    //Need to more test cases
+
 }
